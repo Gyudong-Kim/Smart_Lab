@@ -1,0 +1,831 @@
+[
+    {
+        "id": "615ccb2160d72fa8",
+        "type": "tab",
+        "label": "스마트 연구실",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e02759af78813ba7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a2bec0961f1e0af3",
+        "type": "ui_tab",
+        "name": "ICS-LAB",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5090191ebefd80a3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#c5c5e9",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#c5c5e9",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#c5c5e9",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#c5c5e9",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#fcfcfe",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#c5c5e9",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "ICS-LAB",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "YYYY-MM-DD",
+            "sizes": {
+                "sx": 59,
+                "sy": 59,
+                "gx": 0,
+                "gy": 0,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "56a7bdd45e35d165",
+        "type": "ui_group",
+        "name": "냉난방기 제어",
+        "tab": "a2bec0961f1e0af3",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b42ada0933abdaa9",
+        "type": "mqtt in",
+        "z": "615ccb2160d72fa8",
+        "name": "센서 데이터 수신",
+        "topic": "sensor_data",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e02759af78813ba7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "91e906e7b2b14954",
+                "b21e0ae61784ae5c"
+            ]
+        ]
+    },
+    {
+        "id": "08c1e29cc264fc28",
+        "type": "comment",
+        "z": "615ccb2160d72fa8",
+        "name": "온습도 데이터 수신",
+        "info": "",
+        "x": 140,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "91e906e7b2b14954",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "센서 데이터 수신 (debug)",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "567b3a5387709ae5",
+        "type": "comment",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 제어",
+        "info": "",
+        "x": 130,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b1f5245e0d23dbce",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 2,
+        "width": "6",
+        "height": 1,
+        "name": "온도",
+        "label": "온도",
+        "format": "{{msg.temp}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ba088736d9801ed7",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 3,
+        "width": "6",
+        "height": 1,
+        "name": "습도",
+        "label": "습도",
+        "format": "{{msg.humi}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4878258faaabf8dd",
+        "type": "ui_button",
+        "z": "615ccb2160d72fa8",
+        "name": "ON 버튼",
+        "group": "56a7bdd45e35d165",
+        "order": 10,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "label": "ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "e138dddcee584232"
+            ]
+        ]
+    },
+    {
+        "id": "917fc7c5702ef04f",
+        "type": "ui_slider",
+        "z": "615ccb2160d72fa8",
+        "name": "온도 슬라이더",
+        "label": "",
+        "tooltip": "",
+        "group": "56a7bdd45e35d165",
+        "order": 7,
+        "width": "4",
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "18",
+        "max": "25",
+        "step": 1,
+        "className": "",
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "bd3c360604f0a7e5"
+            ]
+        ]
+    },
+    {
+        "id": "b04e0b9fd76c390d",
+        "type": "ui_button",
+        "z": "615ccb2160d72fa8",
+        "name": "OFF 버튼",
+        "group": "56a7bdd45e35d165",
+        "order": 11,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"code\":\"C_M_002\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 620,
+        "wires": [
+            [
+                "b8de62859a906065",
+                "7bb7916462777814"
+            ]
+        ]
+    },
+    {
+        "id": "1dc7c8e24b9abb63",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 6,
+        "width": "2",
+        "height": 1,
+        "name": "설정 온도 표시",
+        "label": "온도설정",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 550,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "bd3c360604f0a7e5",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "온도 값 저장",
+        "func": "global.set(\"setTemp\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 720,
+        "wires": [
+            [
+                "1dc7c8e24b9abb63"
+            ]
+        ]
+    },
+    {
+        "id": "4f71a6142fb95c9c",
+        "type": "mqtt out",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 ON (MQTT)",
+        "topic": "air_conditioner",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e02759af78813ba7",
+        "x": 570,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b8de62859a906065",
+        "type": "mqtt out",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 OFF (MQTT)",
+        "topic": "air_conditioner",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e02759af78813ba7",
+        "x": 360,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "eab118d7b8ffc421",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 ON (debug)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "7bb7916462777814",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 OFF (debug)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a1caaff0b9f56762",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "name": "센서 데이터",
+        "label": "<h3>실시간 온습도</h3>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 130,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e138dddcee584232",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "설정 값 전송",
+        "func": "msg.payload = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 520,
+        "wires": [
+            [
+                "4f71a6142fb95c9c",
+                "eab118d7b8ffc421"
+            ]
+        ]
+    },
+    {
+        "id": "2454d09e46ff46f5",
+        "type": "mqtt out",
+        "z": "615ccb2160d72fa8",
+        "name": "냉난방기 ON (MQTT)",
+        "topic": "air_conditioner",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e02759af78813ba7",
+        "x": 930,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6d17c7d024548f1f",
+        "type": "ui_switch",
+        "z": "615ccb2160d72fa8",
+        "name": "자동모드 토글버튼",
+        "label": "자동모드",
+        "tooltip": "",
+        "group": "56a7bdd45e35d165",
+        "order": 5,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "813d25a5617b6aba"
+            ]
+        ]
+    },
+    {
+        "id": "59d44b928ddc392e",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "자동모드 로직",
+        "func": "const on = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\nconst clearFlag = () => {\n    global.set(\"flag\", 0);\n}\n\nif (msg.temp <= 26 && global.get(\"flag\") == 0) {\n    msg.payload = on;\n    global.set(\"flag\", 1);\n    setTimeout(clearFlag, 180000);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "71cb4b2be2c4849a"
+            ]
+        ]
+    },
+    {
+        "id": "813d25a5617b6aba",
+        "type": "switch",
+        "z": "615ccb2160d72fa8",
+        "name": "자동모드 Check",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "59d44b928ddc392e"
+            ]
+        ]
+    },
+    {
+        "id": "9e41642d71a7a61e",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 4,
+        "width": "6",
+        "height": "1",
+        "name": "냉난방기 제어",
+        "label": "<h3>냉난방기 제어</h3>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 130,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "130ac3e6511497bd",
+        "type": "inject",
+        "z": "615ccb2160d72fa8",
+        "name": "최초 1회만 실행",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 140,
+        "y": 960,
+        "wires": [
+            [
+                "d26250735c0d735a"
+            ]
+        ]
+    },
+    {
+        "id": "d26250735c0d735a",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "flag 전역변수 설정",
+        "func": "global.set(\"flag\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c91b201945dadbe8",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "자동모드 수행 (debug)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b21e0ae61784ae5c",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "Payload 변경",
+        "func": "msg.temp = msg.payload.temp;\nmsg.humi = msg.payload.humi;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "b1f5245e0d23dbce",
+                "ba088736d9801ed7",
+                "6d17c7d024548f1f"
+            ]
+        ]
+    },
+    {
+        "id": "ee28393bc0245e03",
+        "type": "comment",
+        "z": "615ccb2160d72fa8",
+        "name": "전역변수 선언",
+        "info": "",
+        "x": 130,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "f95b2ca9da0178ee",
+        "type": "ui_slider",
+        "z": "615ccb2160d72fa8",
+        "name": "바람세기 슬라이더",
+        "label": "",
+        "tooltip": "",
+        "group": "56a7bdd45e35d165",
+        "order": 9,
+        "width": "4",
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "0",
+        "max": "3",
+        "step": 1,
+        "className": "",
+        "x": 140,
+        "y": 820,
+        "wires": [
+            [
+                "cc9905d62a3faa75"
+            ]
+        ]
+    },
+    {
+        "id": "83a01a65287a81c8",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 8,
+        "width": "2",
+        "height": 1,
+        "name": "바람세기 표시",
+        "label": "바람세기",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "cc9905d62a3faa75",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "바람세기 값 저장",
+        "func": "global.set(\"setFlow\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 820,
+        "wires": [
+            [
+                "688e183d854538af"
+            ]
+        ]
+    },
+    {
+        "id": "688e183d854538af",
+        "type": "change",
+        "z": "615ccb2160d72fa8",
+        "name": "치환",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "약",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "중",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "2",
+                "fromt": "num",
+                "to": "강",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "3",
+                "fromt": "num",
+                "to": "자동",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 820,
+        "wires": [
+            [
+                "83a01a65287a81c8"
+            ]
+        ]
+    },
+    {
+        "id": "71cb4b2be2c4849a",
+        "type": "switch",
+        "z": "615ccb2160d72fa8",
+        "name": "필터",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "2454d09e46ff46f5",
+                "c91b201945dadbe8"
+            ]
+        ]
+    }
+]

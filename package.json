@@ -1,0 +1,12 @@
+{
+    "name": "Smart_Lab",
+    "description": "Node-RED 프로젝트",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
