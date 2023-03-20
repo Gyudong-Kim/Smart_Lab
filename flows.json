@@ -533,7 +533,7 @@
         "type": "function",
         "z": "615ccb2160d72fa8",
         "name": "자동모드 로직",
-        "func": "const on = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\nconst clearFlag = () => {\n    global.set(\"flag\", 0);\n}\n\nif (msg.temp <= 26 && global.get(\"flag\") == 0) {\n    msg.payload = on;\n    global.set(\"flag\", 1);\n    setTimeout(clearFlag, 180000);\n}\n\nreturn msg;",
+        "func": "const on = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\nconst clearFlag = () => {\n    global.set(\"flag\", 0);\n}\n\nlet autoTemp = global.get(\"setTemp\") + 2;\n\nif (msg.temp <= autoTemp  && global.get(\"flag\") == 0) {\n    msg.payload = on;\n    global.set(\"flag\", 1);\n    setTimeout(clearFlag, 180000);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
