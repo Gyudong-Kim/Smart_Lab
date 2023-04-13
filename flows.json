@@ -75,7 +75,7 @@
             "themeState": {
                 "base-color": {
                     "default": "#0094CE",
-                    "value": "#c5c5e9",
+                    "value": "#0094CE",
                     "edited": true
                 },
                 "page-titlebar-backgroundColor": {
@@ -155,6 +155,36 @@
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "8ce9707587f6f7e9",
+        "type": "ui_spacer",
+        "z": "615ccb2160d72fa8",
+        "name": "spacer",
+        "group": "56a7bdd45e35d165",
+        "order": 7,
+        "width": "3",
+        "height": "1"
+    },
+    {
+        "id": "55b01cae2a741a43",
+        "type": "ui_spacer",
+        "z": "615ccb2160d72fa8",
+        "name": "spacer",
+        "group": "56a7bdd45e35d165",
+        "order": 4,
+        "width": "6",
+        "height": "1"
+    },
+    {
+        "id": "a1717c5f7f0d6258",
+        "type": "ui_spacer",
+        "z": "615ccb2160d72fa8",
+        "name": "spacer",
+        "group": "56a7bdd45e35d165",
+        "order": 15,
+        "width": "6",
+        "height": "1"
     },
     {
         "id": "b42ada0933abdaa9",
@@ -255,7 +285,7 @@
         "z": "615ccb2160d72fa8",
         "name": "ON 버튼",
         "group": "56a7bdd45e35d165",
-        "order": 10,
+        "order": 13,
         "width": "3",
         "height": 1,
         "passthru": false,
@@ -270,7 +300,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 120,
-        "y": 520,
+        "y": 620,
         "wires": [
             [
                 "e138dddcee584232"
@@ -285,7 +315,7 @@
         "label": "",
         "tooltip": "",
         "group": "56a7bdd45e35d165",
-        "order": 7,
+        "order": 10,
         "width": "4",
         "height": 1,
         "passthru": true,
@@ -297,7 +327,7 @@
         "step": 1,
         "className": "",
         "x": 130,
-        "y": 720,
+        "y": 900,
         "wires": [
             [
                 "bd3c360604f0a7e5"
@@ -310,7 +340,7 @@
         "z": "615ccb2160d72fa8",
         "name": "OFF 버튼",
         "group": "56a7bdd45e35d165",
-        "order": 11,
+        "order": 14,
         "width": "3",
         "height": 1,
         "passthru": false,
@@ -325,7 +355,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 120,
-        "y": 620,
+        "y": 760,
         "wires": [
             [
                 "b8de62859a906065",
@@ -338,7 +368,7 @@
         "type": "ui_text",
         "z": "615ccb2160d72fa8",
         "group": "56a7bdd45e35d165",
-        "order": 6,
+        "order": 9,
         "width": "2",
         "height": 1,
         "name": "설정 온도 표시",
@@ -347,7 +377,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 550,
-        "y": 720,
+        "y": 900,
         "wires": []
     },
     {
@@ -362,7 +392,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 720,
+        "y": 900,
         "wires": [
             [
                 "1dc7c8e24b9abb63"
@@ -384,7 +414,7 @@
         "expiry": "",
         "broker": "e02759af78813ba7",
         "x": 570,
-        "y": 520,
+        "y": 620,
         "wires": []
     },
     {
@@ -402,7 +432,7 @@
         "expiry": "",
         "broker": "e02759af78813ba7",
         "x": 360,
-        "y": 620,
+        "y": 760,
         "wires": []
     },
     {
@@ -419,7 +449,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 560,
+        "y": 660,
         "wires": []
     },
     {
@@ -436,7 +466,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
-        "y": 660,
+        "y": 800,
         "wires": []
     },
     {
@@ -468,7 +498,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 520,
+        "y": 620,
         "wires": [
             [
                 "4f71a6142fb95c9c",
@@ -490,57 +520,23 @@
         "correl": "",
         "expiry": "",
         "broker": "e02759af78813ba7",
-        "x": 930,
-        "y": 420,
+        "x": 910,
+        "y": 480,
         "wires": []
-    },
-    {
-        "id": "6d17c7d024548f1f",
-        "type": "ui_switch",
-        "z": "615ccb2160d72fa8",
-        "name": "자동모드 토글버튼",
-        "label": "자동모드",
-        "tooltip": "",
-        "group": "56a7bdd45e35d165",
-        "order": 5,
-        "width": "6",
-        "height": "1",
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 140,
-        "y": 420,
-        "wires": [
-            [
-                "813d25a5617b6aba"
-            ]
-        ]
     },
     {
         "id": "59d44b928ddc392e",
         "type": "function",
         "z": "615ccb2160d72fa8",
         "name": "자동모드 로직",
-        "func": "const on = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\nconst clearFlag = () => {\n    global.set(\"flag\", 0);\n}\n\nlet autoTemp = global.get(\"setTemp\") + 2;\n\nif (msg.temp <= autoTemp  && global.get(\"flag\") == 0) {\n    msg.payload = on;\n    global.set(\"flag\", 1);\n    setTimeout(clearFlag, 180000);\n}\n\nreturn msg;",
+        "func": "// 컨트롤러로 전송할 메시지 객체\nconst send = {\n    \"code\": \"C_M_001\",\n    \"temp\": global.get(\"setTemp\"),\n    \"flow\": global.get(\"setFlow\")\n}\n\n// Flag 초기화를 위한 함수\nconst clearFlag = () => {\n    global.set(\"flag\", 0);\n}\n\n// 설정온도+2℃ 를 기준으로 자동모드 동작\nlet autoTemp = global.get(\"setTemp\") + 2;\n\n// 3분에 한 번씩 온도 CHK'\nif (msg.temp <= autoTemp && global.get(\"flag\") == 0) {\n    msg.payload = send;\n    global.set(\"flag\", 1);\n    setTimeout(clearFlag, 180000); // 3분 후 Flag 초기화\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
-        "y": 420,
+        "x": 530,
+        "y": 480,
         "wires": [
             [
                 "71cb4b2be2c4849a"
@@ -551,7 +547,7 @@
         "id": "813d25a5617b6aba",
         "type": "switch",
         "z": "615ccb2160d72fa8",
-        "name": "자동모드 Check",
+        "name": "자동모드 C\bHK'",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -564,8 +560,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 340,
-        "y": 420,
+        "x": 320,
+        "y": 480,
         "wires": [
             [
                 "59d44b928ddc392e"
@@ -577,7 +573,7 @@
         "type": "ui_text",
         "z": "615ccb2160d72fa8",
         "group": "56a7bdd45e35d165",
-        "order": 4,
+        "order": 5,
         "width": "6",
         "height": "1",
         "name": "냉난방기 제어",
@@ -610,8 +606,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 140,
-        "y": 960,
+        "x": 1160,
+        "y": 520,
         "wires": [
             [
                 "d26250735c0d735a"
@@ -629,8 +625,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 960,
+        "x": 1360,
+        "y": 520,
         "wires": [
             []
         ]
@@ -648,8 +644,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 460,
+        "x": 920,
+        "y": 520,
         "wires": []
     },
     {
@@ -669,7 +665,7 @@
             [
                 "b1f5245e0d23dbce",
                 "ba088736d9801ed7",
-                "6d17c7d024548f1f"
+                "80df93d136d84a9d"
             ]
         ]
     },
@@ -679,8 +675,8 @@
         "z": "615ccb2160d72fa8",
         "name": "전역변수 선언",
         "info": "",
-        "x": 130,
-        "y": 920,
+        "x": 1150,
+        "y": 480,
         "wires": []
     },
     {
@@ -691,7 +687,7 @@
         "label": "",
         "tooltip": "",
         "group": "56a7bdd45e35d165",
-        "order": 9,
+        "order": 12,
         "width": "4",
         "height": 1,
         "passthru": true,
@@ -703,7 +699,7 @@
         "step": 1,
         "className": "",
         "x": 140,
-        "y": 820,
+        "y": 1000,
         "wires": [
             [
                 "cc9905d62a3faa75"
@@ -715,7 +711,7 @@
         "type": "ui_text",
         "z": "615ccb2160d72fa8",
         "group": "56a7bdd45e35d165",
-        "order": 8,
+        "order": 11,
         "width": "2",
         "height": 1,
         "name": "바람세기 표시",
@@ -724,7 +720,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 730,
-        "y": 820,
+        "y": 1000,
         "wires": []
     },
     {
@@ -739,7 +735,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 820,
+        "y": 1000,
         "wires": [
             [
                 "688e183d854538af"
@@ -795,7 +791,7 @@
         "to": "",
         "reg": false,
         "x": 530,
-        "y": 820,
+        "y": 1000,
         "wires": [
             [
                 "83a01a65287a81c8"
@@ -819,13 +815,156 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 730,
-        "y": 420,
+        "x": 710,
+        "y": 480,
         "wires": [
             [
                 "2454d09e46ff46f5",
                 "c91b201945dadbe8"
             ]
         ]
+    },
+    {
+        "id": "ece5e5b5b2d9efb4",
+        "type": "http in",
+        "z": "615ccb2160d72fa8",
+        "name": "",
+        "url": "code",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1150,
+        "y": 100,
+        "wires": [
+            [
+                "3b2f98410fac5bc6",
+                "a884051d814371e1"
+            ]
+        ]
+    },
+    {
+        "id": "3b2f98410fac5bc6",
+        "type": "switch",
+        "z": "615ccb2160d72fa8",
+        "name": "",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "C_M_001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "C_M_002",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1350,
+        "y": 100,
+        "wires": [
+            [
+                "e138dddcee584232"
+            ],
+            [
+                "b8de62859a906065"
+            ]
+        ]
+    },
+    {
+        "id": "a884051d814371e1",
+        "type": "http response",
+        "z": "615ccb2160d72fa8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "80df93d136d84a9d",
+        "type": "ui_switch",
+        "z": "615ccb2160d72fa8",
+        "name": "자동모드",
+        "label": "",
+        "tooltip": "",
+        "group": "56a7bdd45e35d165",
+        "order": 8,
+        "width": "1",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "f47a3c0cab2c6cc8",
+                "813d25a5617b6aba"
+            ]
+        ]
+    },
+    {
+        "id": "26cfee0a2db1a8c6",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "name": "운전모드",
+        "label": "운전모드",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 520,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f47a3c0cab2c6cc8",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "Payload 변경",
+        "func": "if(msg.payload == true) {\n    msg.payload = \"자동\";\n} else {\n    msg.payload = \"수동\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "26cfee0a2db1a8c6"
+            ]
+        ]
+    },
+    {
+        "id": "3805df55d33c1af1",
+        "type": "comment",
+        "z": "615ccb2160d72fa8",
+        "name": "HTTP",
+        "info": "",
+        "x": 1130,
+        "y": 60,
+        "wires": []
     }
 ]
