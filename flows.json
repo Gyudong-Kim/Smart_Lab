@@ -53,7 +53,7 @@
             "name": "theme-light",
             "lightTheme": {
                 "default": "#0094CE",
-                "baseColor": "#c5c5e9",
+                "baseColor": "#15322d",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
@@ -75,11 +75,11 @@
             "themeState": {
                 "base-color": {
                     "default": "#0094CE",
-                    "value": "#0094CE",
+                    "value": "#15322d",
                     "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#c5c5e9",
+                    "value": "#15322d",
                     "edited": false
                 },
                 "page-backgroundColor": {
@@ -87,11 +87,11 @@
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#fcfcfe",
+                    "value": "#2c685d",
                     "edited": false
                 },
                 "group-borderColor": {
@@ -107,7 +107,7 @@
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#c5c5e9",
+                    "value": "#15322d",
                     "edited": false
                 },
                 "widget-borderColor": {
@@ -134,8 +134,8 @@
             "allowTempTheme": "true",
             "dateFormat": "YYYY-MM-DD",
             "sizes": {
-                "sx": 59,
-                "sy": 59,
+                "sx": 62,
+                "sy": 62,
                 "gx": 0,
                 "gy": 0,
                 "cx": 6,
@@ -164,26 +164,6 @@
         "group": "56a7bdd45e35d165",
         "order": 7,
         "width": "3",
-        "height": "1"
-    },
-    {
-        "id": "55b01cae2a741a43",
-        "type": "ui_spacer",
-        "z": "615ccb2160d72fa8",
-        "name": "spacer",
-        "group": "56a7bdd45e35d165",
-        "order": 4,
-        "width": "6",
-        "height": "1"
-    },
-    {
-        "id": "a1717c5f7f0d6258",
-        "type": "ui_spacer",
-        "z": "615ccb2160d72fa8",
-        "name": "spacer",
-        "group": "56a7bdd45e35d165",
-        "order": 15,
-        "width": "6",
         "height": "1"
     },
     {
@@ -478,7 +458,7 @@
         "width": "6",
         "height": "1",
         "name": "센서 데이터",
-        "label": "<h3>실시간 온습도</h3>",
+        "label": "<h3>온습도 현황</h3>",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -520,7 +500,7 @@
         "correl": "",
         "expiry": "",
         "broker": "e02759af78813ba7",
-        "x": 910,
+        "x": 950,
         "y": 480,
         "wires": []
     },
@@ -535,7 +515,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
+        "x": 570,
         "y": 480,
         "wires": [
             [
@@ -560,7 +540,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 320,
+        "x": 340,
         "y": 480,
         "wires": [
             [
@@ -606,8 +586,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 1160,
-        "y": 520,
+        "x": 1260,
+        "y": 100,
         "wires": [
             [
                 "d26250735c0d735a"
@@ -625,8 +605,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1360,
-        "y": 520,
+        "x": 1540,
+        "y": 100,
         "wires": [
             []
         ]
@@ -644,7 +624,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 960,
         "y": 520,
         "wires": []
     },
@@ -675,8 +655,8 @@
         "z": "615ccb2160d72fa8",
         "name": "전역변수 선언",
         "info": "",
-        "x": 1150,
-        "y": 480,
+        "x": 1250,
+        "y": 60,
         "wires": []
     },
     {
@@ -815,7 +795,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 710,
+        "x": 750,
         "y": 480,
         "wires": [
             [
@@ -828,13 +808,13 @@
         "id": "ece5e5b5b2d9efb4",
         "type": "http in",
         "z": "615ccb2160d72fa8",
-        "name": "",
-        "url": "code",
+        "name": "HTTP [POST] | URL: /code",
+        "url": "control",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 1150,
-        "y": 100,
+        "x": 1290,
+        "y": 240,
         "wires": [
             [
                 "3b2f98410fac5bc6",
@@ -859,19 +839,35 @@
                 "t": "eq",
                 "v": "C_M_002",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "C_M_003",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "C_M_004",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 1350,
-        "y": 100,
+        "outputs": 4,
+        "x": 1510,
+        "y": 300,
         "wires": [
             [
                 "e138dddcee584232"
             ],
             [
                 "b8de62859a906065"
+            ],
+            [
+                "89b0953b5d6df08b"
+            ],
+            [
+                "f14d3d9f6f708229"
             ]
         ]
     },
@@ -879,11 +875,11 @@
         "id": "a884051d814371e1",
         "type": "http response",
         "z": "615ccb2160d72fa8",
-        "name": "",
+        "name": "HTTP Response",
         "statusCode": "",
         "headers": {},
-        "x": 1530,
-        "y": 100,
+        "x": 1540,
+        "y": 240,
         "wires": []
     },
     {
@@ -934,7 +930,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 520,
+        "x": 560,
         "y": 420,
         "wires": []
     },
@@ -949,7 +945,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 330,
         "y": 420,
         "wires": [
             [
@@ -963,8 +959,245 @@
         "z": "615ccb2160d72fa8",
         "name": "HTTP",
         "info": "",
-        "x": 1130,
-        "y": 60,
+        "x": 1230,
+        "y": 200,
         "wires": []
+    },
+    {
+        "id": "a58a761fb79c5084",
+        "type": "comment",
+        "z": "615ccb2160d72fa8",
+        "name": "가습기 제어",
+        "info": "",
+        "x": 120,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "c9c2cf4a963db530",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 16,
+        "width": "6",
+        "height": "1",
+        "name": "가습기 제어",
+        "label": "<h3>가습기 제어</h3>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 130,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "f4438f6ee56726a0",
+        "type": "ui_slider",
+        "z": "615ccb2160d72fa8",
+        "name": "습도 슬라이더",
+        "label": "",
+        "tooltip": "",
+        "group": "56a7bdd45e35d165",
+        "order": 21,
+        "width": "4",
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "15",
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 130,
+        "y": 1460,
+        "wires": [
+            [
+                "1057968663c60820"
+            ]
+        ]
+    },
+    {
+        "id": "1b398ce3a9557633",
+        "type": "ui_text",
+        "z": "615ccb2160d72fa8",
+        "group": "56a7bdd45e35d165",
+        "order": 20,
+        "width": "2",
+        "height": 1,
+        "name": "설정 습도 표시",
+        "label": "습도설정",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "1057968663c60820",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "습도 값 저장",
+        "func": "global.set(\"setHumi\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1460,
+        "wires": [
+            [
+                "1b398ce3a9557633"
+            ]
+        ]
+    },
+    {
+        "id": "8cc66a4b0e9d86af",
+        "type": "ui_button",
+        "z": "615ccb2160d72fa8",
+        "name": "ON 버튼",
+        "group": "56a7bdd45e35d165",
+        "order": 22,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "label": "ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 1180,
+        "wires": [
+            [
+                "89b0953b5d6df08b"
+            ]
+        ]
+    },
+    {
+        "id": "2153838af0f18508",
+        "type": "ui_button",
+        "z": "615ccb2160d72fa8",
+        "name": "OFF 버튼",
+        "group": "56a7bdd45e35d165",
+        "order": 23,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"code\":\"C_M_004\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 1320,
+        "wires": [
+            [
+                "f14d3d9f6f708229",
+                "288f103301750a40"
+            ]
+        ]
+    },
+    {
+        "id": "ec775103943439ab",
+        "type": "mqtt out",
+        "z": "615ccb2160d72fa8",
+        "name": "가습기 ON (MQTT)",
+        "topic": "humidifier",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e02759af78813ba7",
+        "x": 570,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "f14d3d9f6f708229",
+        "type": "mqtt out",
+        "z": "615ccb2160d72fa8",
+        "name": "가습기 OFF (MQTT)",
+        "topic": "humidifier",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e02759af78813ba7",
+        "x": 350,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "03b1cb01ca2ea18c",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "가습기 ON (debug)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "288f103301750a40",
+        "type": "debug",
+        "z": "615ccb2160d72fa8",
+        "name": "가습기 OFF (debug)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "89b0953b5d6df08b",
+        "type": "function",
+        "z": "615ccb2160d72fa8",
+        "name": "설정 값 전송",
+        "func": "msg.payload = {\n    \"code\": \"C_M_003\",\n    \"humi\": global.get(\"setHumi\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1180,
+        "wires": [
+            [
+                "ec775103943439ab",
+                "03b1cb01ca2ea18c"
+            ]
+        ]
     }
 ]
